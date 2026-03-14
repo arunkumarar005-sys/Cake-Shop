@@ -1,0 +1,571 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cake Shop</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+    />
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  </head>
+  <style>
+    body {
+      overflow-x: hidden;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+    .navbar {
+      background-color: #0cb3a9;
+    }
+    .nav-item a {
+      color: white;
+    }
+    .naving li a {
+      font-size: 14px;
+    }
+    .hero {
+      border-radius: 20px;
+    }
+
+    .naving .nav-link {
+      color: white;
+      transition: 0.3s;
+    }
+
+    .naving .nav-link:hover {
+      color: #868686;
+    }
+
+    .naving .nav-link.active {
+      color: #e7e7e7;
+      font-weight: 600;
+    }
+
+    .login-icon {
+      color: white;
+      transition: 0.3s;
+    }
+
+    .login-icon:hover {
+      color: #868686;
+      transform: scale(1.1);
+    }
+
+    .info-box {
+      width: 80%;
+      margin: 40px auto;
+      padding: 30px 40px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+
+    .cake-section {
+      margin-top: 15px;
+
+      padding: 20px 0;
+      background: #f8f8f8;
+    }
+
+    .cake-section h4 {
+      font-weight: 600;
+    }
+
+    .cake-section p {
+      color: #555;
+      max-width: 600px;
+      margin: 0 auto 40px auto;
+    }
+
+    .cake-card {
+      background: white;
+      border-radius: 15px;
+      padding: 15px;
+      text-align: center;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+      transition: 0.3s;
+    }
+
+    .cake-card img {
+      width: 100%;
+      border-radius: 12px;
+      margin-bottom: 10px;
+    }
+
+    .cake-card h5 {
+      margin-top: 8px;
+      font-size: 18px;
+    }
+
+    .cake-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+    }
+
+    .view-btn {
+      background: #0cb3a9;
+      color: white;
+      padding: 10px 35px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .view-btn:hover {
+      background: #089c93;
+      color: white;
+    }
+
+    .info-box {
+      width: 80%;
+      margin: 60px auto;
+      padding: 30px 40px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .product-section {
+      padding: 70px 0;
+      background: #f8f8f8;
+    }
+
+    .product-card {
+      background: white;
+      border-radius: 15px;
+      padding: 15px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+      transition: 0.3s;
+    }
+
+    .product-card img {
+      width: 100%;
+      border-radius: 12px;
+      margin-bottom: 10px;
+    }
+
+    .product-card h5 {
+      margin-bottom: 10px;
+    }
+
+    .price-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .price {
+      font-weight: 600;
+      font-size: 18px;
+      color: #0cb3a9;
+    }
+
+    .old-price {
+      text-decoration: line-through;
+      color: #888;
+      margin-left: 5px;
+    }
+
+    .view-btn {
+      background: #0cb3a9;
+      color: white;
+      padding: 5px 14px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .view-btn:hover {
+      background: #099b92;
+      color: white;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+    }
+
+    .footer-section {
+      background: #1fa9a3;
+      color: white;
+      padding: 60px 0;
+    }
+
+    .footer-section h5 {
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+
+    .footer-links {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-links li {
+      margin-bottom: 8px;
+    }
+
+    .footer-links a {
+      text-decoration: none;
+      color: white;
+      font-size: 14px;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+
+    .payment-box span {
+      display: inline-block;
+      background: white;
+      color: black;
+      padding: 6px 12px;
+      margin: 4px;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+
+    .footer-text {
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .footer-contact {
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    .footer-contact i {
+      margin-right: 8px;
+    }
+
+    .social-icons a {
+      color: white;
+      font-size: 22px;
+      margin-right: 15px;
+    }
+
+    .social-icons a:hover {
+      color: #ffd700;
+    }
+
+    .payment-box {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .payment-box img {
+      width: 70px;
+      height: 40px;
+      border-radius: 6px;
+      object-fit: contain;
+    }
+  </style>
+  <body>
+    <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid">
+        <a class="navbar-brand ms-5" href="index.html">
+          <img
+            src="Assests/images/logo-64261-1750314211.png"
+            alt="Logo"
+            width="150"
+            height="50"
+          />
+        </a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mx-auto gap-4 naving">
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Home</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="store.html">Store Locator</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="franchise.html">Franchise Enquiry</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="products.html">Products</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#">Custom Cake</a>
+            </li>
+          </ul>
+
+          <a href="login.html" class="fs-4 me-5 login-icon">
+            <i class="bi bi-person-circle"></i>
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <img
+      src="Assests/images/cake hero.jpeg"
+      class="container-fluid mt-3 hero"
+      data-aos="fade-up"
+      alt="hero-section"
+    />
+
+    <section class="info-box" data-aos="fade-right">
+      <div class="row align-items-center">
+        <div class="col-md-8">
+          <h3>Find Your Nearest Outlet</h3>
+          <p>Discover our delicious cakes and desserts at a store near you.</p>
+        </div>
+
+        <div class="col-md-4">
+          <select class="form-select">
+            <option selected>Select Outlet</option>
+            <option>Chennai</option>
+            <option>Bangalore</option>
+            <option>Hyderabad</option>
+          </select>
+        </div>
+      </div>
+    </section>
+
+    <section class="cake-section" style="background-color: #cef0ee">
+      <div class="container">
+        <h4 class="text-center" data-aos="fade-left">
+          ORDER CAKES, DESSERTS & MORE ONLINE
+        </h4>
+
+        <p class="text-center" data-aos="fade-left">
+          Baked Fresh Daily & Premium Ingredients
+        </p>
+
+        <div class="row g-4" data-aos="fade-up">
+          <div class="col-md-3">
+            <div class="cake-card">
+              <img src="Assests/images/p-1.jpeg" />
+              <h5>Chocolate Cake</h5>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="cake-card">
+              <img src="Assests/images/p-2.jpeg" />
+              <h5>Strawberry Cake</h5>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="cake-card">
+              <img src="Assests/images/p-3.jpeg" />
+              <h5>Vanilla Cake</h5>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="cake-card">
+              <img src="Assests/images/p-4.jpeg" />
+              <h5>Red Velvet</h5>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="cake-card">
+              <img src="Assests/images/p-5.jpeg" />
+              <h5>Butterscotch Cake</h5>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="cake-card">
+              <img src="Assests/images/p-6.jpeg" />
+              <h5>Black Forest</h5>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="cake-card">
+              <img src="Assests/images/p-7.jpeg" />
+              <h5>Pineapple Cake</h5>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="cake-card">
+              <img src="Assests/images/p-8.jpeg" />
+              <h5>Mango Cake</h5>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-5">
+          <a href="#" class="view-btn">View All</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="product-section">
+      <div class="container">
+        <h2 class="text-center" data-aos="fade-left">
+          HANDPICKED JUST FOR YOU
+        </h2>
+        <p class="text-center mb-5" data-aos="fade-left">
+          Most Loved Best Sellers
+        </p>
+
+        <div class="row g-4" data-aos="fade-up">
+          <div class="col-md-3">
+            <div class="product-card">
+              <img src="Assests/images/h-1.jpeg" class="img-fluid" />
+
+              <h5>Chocolate Cake</h5>
+
+              <div class="price-row">
+                <div>
+                  <span class="price">₹499</span>
+                  <span class="old-price">₹699</span>
+                </div>
+
+                <a href="#" class="view-btn">View</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="product-card">
+              <img src="Assests/images/h-2.jpeg" class="img-fluid" />
+              <h5>Strawberry Cake</h5>
+
+              <div class="price-row">
+                <div>
+                  <span class="price">₹549</span>
+                  <span class="old-price">₹749</span>
+                </div>
+
+                <a href="#" class="view-btn">View</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="product-card">
+              <img src="Assests/images/h-3.jpeg" class="img-fluid" />
+              <h5>Vanilla Cake</h5>
+
+              <div class="price-row">
+                <div>
+                  <span class="price">₹399</span>
+                  <span class="old-price">₹599</span>
+                </div>
+
+                <a href="#" class="view-btn">View</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="product-card">
+              <img src="Assests/images/h4.jpeg" class="img-fluid" />
+              <h5>Red Velvet</h5>
+
+              <div class="price-row">
+                <div>
+                  <span class="price">₹599</span>
+                  <span class="old-price">₹799</span>
+                </div>
+
+                <a href="#" class="view-btn">View</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <img src="Assests/images/last.png" class="img-fluid" alt="..." />
+
+    <footer class="footer-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3">
+            <h5>Useful Links</h5>
+            <ul class="footer-links">
+              <li><a href="#">Blogs</a></li>
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms & Conditions</a></li>
+              <li><a href="#">Shipping Policy</a></li>
+              <li><a href="#">Promo Codes</a></li>
+              <li><a href="#">Refund Policy</a></li>
+            </ul>
+          </div>
+
+          <div class="col-md-3">
+            <h5>Payment Methods</h5>
+
+            <div class="payment-box">
+              <img src="Assests/images/cash-svg.jpeg" alt="Cash" />
+              <img src="Assests/images/mastercard-svg.jpeg" alt="Mastercard" />
+              <img src="Assests/images/gpay-svg.jpeg" alt="Gpay" />
+              <img src="Assests/images/paytm-svg.jpeg" alt="Paytm" />
+              <img src="Assests/images/visa-svg.jpeg" alt="Visa" />
+              <img src="Assests/images/upi-icon.jpeg" alt="UPI" />
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <h5>Address</h5>
+            <p class="footer-text">
+              CKR Retail Private Limited - Food Division,<br />
+              No:12, Carvinville, Cenotaph Road,<br />
+              Teynampet, Chennai - 600018
+            </p>
+          </div>
+
+          <div class="col-md-3">
+            <h5>Contact & Connect</h5>
+
+            <p class="footer-contact">
+              <i class="bi bi-envelope"></i> support@cksfoods.in
+            </p>
+
+            <p class="footer-contact">
+              <i class="bi bi-telephone"></i> 7338999937
+            </p>
+
+            <div class="social-icons">
+              <a href="#"><i class="bi bi-facebook"></i></a>
+              <a href="#"><i class="bi bi-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+  </body>
+</html>
