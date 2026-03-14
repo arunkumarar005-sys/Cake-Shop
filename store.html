@@ -1,0 +1,463 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cake Shop</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+    />
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  </head>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    .navbar {
+      background-color: #0cb3a9;
+    }
+    .nav-item a {
+      color: white;
+    }
+    .naving li a {
+      font-size: 14px;
+    }
+    .hero {
+      border-radius: 20px;
+    }
+
+    .naving .nav-link {
+      color: white;
+      transition: 0.3s;
+    }
+
+    .naving .nav-link:hover {
+      color: #868686;
+    }
+
+    .naving .nav-link.active {
+      color: #e7e7e7;
+      font-weight: 600;
+    }
+
+    .login-icon {
+      color: white;
+      transition: 0.3s;
+    }
+
+    .login-icon:hover {
+      color: #868686;
+      transform: scale(1.1);
+    }
+
+    .footer-section {
+      background: #1fa9a3;
+      color: white;
+      padding: 60px 0;
+    }
+
+    .footer-section h5 {
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+
+    .footer-links {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-links li {
+      margin-bottom: 8px;
+    }
+
+    .footer-links a {
+      text-decoration: none;
+      color: white;
+      font-size: 14px;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+
+    .payment-box span {
+      display: inline-block;
+      background: white;
+      color: black;
+      padding: 6px 12px;
+      margin: 4px;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+
+    .footer-text {
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .footer-contact {
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    .footer-contact i {
+      margin-right: 8px;
+    }
+
+    .social-icons a {
+      color: white;
+      font-size: 22px;
+      margin-right: 15px;
+    }
+
+    .social-icons a:hover {
+      color: #ffd700;
+    }
+
+    .payment-box {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .payment-box img {
+      width: 70px;
+      height: 40px;
+      border-radius: 6px;
+      object-fit: contain;
+    }
+
+    .store-section {
+      background: #f3f3f3;
+    }
+
+    .store-card {
+      background: white;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    .store-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    .store-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .store-logo {
+      width: 40px;
+      height: 40px;
+      border-radius: 6px;
+    }
+
+    .store-title h4 {
+      margin: 0;
+      font-weight: 600;
+    }
+
+    .view-store {
+      color: #0cb3a9;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .store-location,
+    .store-time {
+      color: #444;
+      margin-bottom: 8px;
+    }
+
+    .order-btn {
+      width: 100%;
+      background: #0cb3a9;
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: 10px;
+      font-weight: 500;
+      margin-top: 15px;
+    }
+
+    .order-btn:hover {
+      background: #099a90;
+    }
+  </style>
+  <body>
+    <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid">
+        <a class="navbar-brand ms-5" href="index.html">
+          <img
+            src="Assests/images/logo-64261-1750314211.png"
+            alt="Logo"
+            width="150"
+            height="50"
+          />
+        </a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mx-auto gap-4 naving">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Store Locator</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="franchise.html">Franchise Enquiry</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="products.html">Products</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#">Custom Cake</a>
+            </li>
+          </ul>
+
+          <a href="login.html" class="fs-4 me-5 login-icon">
+            <i class="bi bi-person-circle"></i>
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <section class="store-section py-5">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-md-6">
+            <div class="store-card" data-aos="fade-right">
+              <div class="store-top">
+                <div class="store-title">
+                  <img src="Assests/images/bakery.jpg" class="store-logo" />
+                  <h4>Ck's Bakery</h4>
+                </div>
+
+                <a href="#" class="view-store">View Store →</a>
+              </div>
+
+              <p class="store-location">
+                <i class="bi bi-geo-alt"></i> Vinayagapuram Kolathur, Chennai
+              </p>
+
+              <p class="store-time">
+                <i class="bi bi-clock"></i>
+                <strong>Open from</strong> 12:00 AM to 11:59 PM
+              </p>
+
+              <button class="order-btn">Order Online</button>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="store-card" data-aos="fade-left">
+              <div class="store-top">
+                <div class="store-title">
+                  <img src="Assests/images/bakery.jpg" class="store-logo" />
+                  <h4>Ck's Bakery</h4>
+                </div>
+
+                <a href="#" class="view-store">View Store →</a>
+              </div>
+
+              <p class="store-location">
+                <i class="bi bi-geo-alt"></i> Jayanagar, Bengaluru
+              </p>
+
+              <p class="store-time">
+                <i class="bi bi-clock"></i>
+                <strong>Open from</strong> 12:00 AM to 11:59 PM
+              </p>
+
+              <button class="order-btn">Order Online</button>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="store-card" data-aos="fade-right">
+              <div class="store-top">
+                <div class="store-title">
+                  <img src="Assests/images/bakery.jpg" class="store-logo" />
+                  <h4>Ck's Bakery</h4>
+                </div>
+
+                <a href="#" class="view-store">View Store →</a>
+              </div>
+
+              <p class="store-location">
+                <i class="bi bi-geo-alt"></i> Ambattur, Chennai
+              </p>
+
+              <p class="store-time">
+                <i class="bi bi-clock"></i>
+                <strong>Open from</strong> 12:00 AM to 11:59 PM
+              </p>
+
+              <button class="order-btn">Order Online</button>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="store-card" data-aos="fade-left">
+              <div class="store-top">
+                <div class="store-title">
+                  <img src="Assests/images/bakery.jpg" class="store-logo" />
+                  <h4>Ck's Bakery</h4>
+                </div>
+
+                <a href="#" class="view-store">View Store →</a>
+              </div>
+
+              <p class="store-location">
+                <i class="bi bi-geo-alt"></i> Mannivakkam, Chennai
+              </p>
+
+              <p class="store-time">
+                <i class="bi bi-clock"></i>
+                <strong>Open from</strong> 12:00 AM to 11:59 PM
+              </p>
+
+              <button class="order-btn">Order Online</button>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="store-card" data-aos="fade-right">
+              <div class="store-top">
+                <div class="store-title">
+                  <img src="Assests/images/bakery.jpg" class="store-logo" />
+                  <h4>Ck's Bakery</h4>
+                </div>
+
+                <a href="#" class="view-store">View Store →</a>
+              </div>
+
+              <p class="store-location">
+                <i class="bi bi-geo-alt"></i> Madipakkam, Chennai
+              </p>
+
+              <p class="store-time">
+                <i class="bi bi-clock"></i>
+                <strong>Open from</strong> 12:00 AM to 11:59 PM
+              </p>
+
+              <button class="order-btn">Order Online</button>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="store-card" data-aos="fade-left">
+              <div class="store-top">
+                <div class="store-title">
+                  <img src="Assests/images/bakery.jpg" class="store-logo" />
+                  <h4>Ck's Bakery</h4>
+                </div>
+
+                <a href="#" class="view-store">View Store →</a>
+              </div>
+
+              <p class="store-location">
+                <i class="bi bi-geo-alt"></i> Mudichur, Chennai
+              </p>
+
+              <p class="store-time">
+                <i class="bi bi-clock"></i>
+                <strong>Open from</strong> 12:00 AM to 11:59 PM
+              </p>
+
+              <button class="order-btn">Order Online</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3">
+            <h5>Useful Links</h5>
+            <ul class="footer-links">
+              <li><a href="#">Blogs</a></li>
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms & Conditions</a></li>
+              <li><a href="#">Shipping Policy</a></li>
+              <li><a href="#">Promo Codes</a></li>
+              <li><a href="#">Refund Policy</a></li>
+            </ul>
+          </div>
+
+          <div class="col-md-3">
+            <h5>Payment Methods</h5>
+
+            <div class="payment-box">
+              <img src="Assests/images/cash-svg.jpeg" alt="Cash" />
+              <img src="Assests/images/mastercard-svg.jpeg" alt="Mastercard" />
+              <img src="Assests/images/gpay-svg.jpeg" alt="Gpay" />
+              <img src="Assests/images/paytm-svg.jpeg" alt="Paytm" />
+              <img src="Assests/images/visa-svg.jpeg" alt="Visa" />
+              <img src="Assests/images/upi-icon.jpeg" alt="UPI" />
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <h5>Address</h5>
+            <p class="footer-text">
+              CKR Retail Private Limited - Food Division,<br />
+              No:12, Carvinville, Cenotaph Road,<br />
+              Teynampet, Chennai - 600018
+            </p>
+          </div>
+
+          <div class="col-md-3">
+            <h5>Contact & Connect</h5>
+
+            <p class="footer-contact">
+              <i class="bi bi-envelope"></i> support@cksfoods.in
+            </p>
+
+            <p class="footer-contact">
+              <i class="bi bi-telephone"></i> 7338999937
+            </p>
+
+            <div class="social-icons">
+              <a href="#"><i class="bi bi-facebook"></i></a>
+              <a href="#"><i class="bi bi-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+  </body>
+</html>

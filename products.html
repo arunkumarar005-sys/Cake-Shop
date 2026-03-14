@@ -1,0 +1,406 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cake Shop</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        overflow-x: hidden;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+      }
+
+      .navbar {
+        background: #0cb3a9;
+      }
+
+      .nav-item a {
+        color: white;
+      }
+
+      .naving li a {
+        font-size: 14px;
+      }
+
+      .naving .nav-link {
+        color: white;
+        transition: 0.3s;
+      }
+
+      .naving .nav-link:hover {
+        color: #868686;
+      }
+
+      .naving .nav-link.active {
+        color: #e7e7e7;
+        font-weight: 600;
+      }
+
+      .login-icon {
+        color: white;
+        transition: 0.3s;
+      }
+
+      .login-icon:hover {
+        color: #868686;
+        transform: scale(1.1);
+      }
+
+      .navbar-toggler {
+        border-color: white;
+      }
+
+      .navbar-toggler-icon {
+        filter: invert(1);
+      }
+
+      .products-section {
+        background: #f4f4f6;
+      }
+
+      .product-card {
+        background: white;
+        padding: 15px;
+        border-radius: 15px;
+        text-align: center;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+        transition:
+          transform 0.35s ease,
+          box-shadow 0.35s ease;
+        height: 100%;
+        cursor: pointer;
+      }
+
+      .product-card img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 12px;
+        margin-bottom: 12px;
+        transition: transform 0.5s ease;
+      }
+
+      .product-card p {
+        font-weight: 500;
+        font-size: 15px;
+        margin: 0;
+      }
+
+      .product-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+      }
+
+      .product-card:hover img {
+        transform: scale(1.08);
+      }
+
+      .footer-section {
+        background: #1fa9a3;
+        color: white;
+        padding: 60px 0;
+      }
+
+      .footer-section h5 {
+        margin-bottom: 20px;
+        font-weight: 600;
+      }
+
+      .footer-links {
+        list-style: none;
+        padding: 0;
+      }
+
+      .footer-links li {
+        margin-bottom: 8px;
+      }
+
+      .footer-links a {
+        text-decoration: none;
+        color: white;
+        font-size: 14px;
+      }
+
+      .footer-links a:hover {
+        text-decoration: underline;
+      }
+
+      .footer-text {
+        font-size: 14px;
+        line-height: 1.6;
+      }
+
+      .footer-contact {
+        font-size: 14px;
+        margin-bottom: 10px;
+      }
+
+      .footer-contact i {
+        margin-right: 8px;
+      }
+
+      .social-icons a {
+        color: white;
+        font-size: 22px;
+        margin-right: 15px;
+      }
+
+      .social-icons a:hover {
+        color: #ffd700;
+      }
+
+      .payment-box {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .payment-box img {
+        width: 70px;
+        height: 40px;
+        border-radius: 6px;
+        object-fit: contain;
+      }
+
+      @media (max-width: 768px) {
+        .navbar-brand {
+          margin-left: 0 !important;
+        }
+
+        .login-icon {
+          margin-right: 0 !important;
+        }
+
+        .products-section h2 {
+          font-size: 24px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img
+            src="Assests/images/logo-64261-1750314211.png"
+            width="150"
+            height="50"
+          />
+        </a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mx-auto gap-4 naving">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="store.html">Store Locator</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="franchise.html">Franchise Enquiry</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link active" href="products.html">Products</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#">Custom Cake</a>
+            </li>
+          </ul>
+
+          <a href="login.html" class="fs-4 login-icon">
+            <i class="bi bi-person-circle"></i>
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <section class="products-section py-5">
+      <div class="container">
+        <h2 class="text-center mb-5" data-aos="fade-right">Our Products</h2>
+
+        <div class="row g-4" data-aos="fade-up">
+          <div class="col-xl-2 col-lg-3 col-md-4 col-6">
+            <div class="product-card">
+              <img src="Assests/images/pr-1.jpeg" />
+              <p>4 in 1 Assorted Cakes</p>
+            </div>
+          </div>
+
+          <div class="col-xl-2 col-lg-3 col-md-4 col-6">
+            <div class="product-card">
+              <img src="Assests/images/pr-2.jpeg" />
+              <p>Indian Desi Flavour (10% OFF)</p>
+            </div>
+          </div>
+
+          <div class="col-xl-2 col-lg-3 col-md-4 col-6">
+            <div class="product-card">
+              <img src="Assests/images/pr-3.jpeg" />
+              <p>Exotic Cakes (10% OFF)</p>
+            </div>
+          </div>
+
+          <div class="col-xl-2 col-lg-3 col-md-4 col-6">
+            <div class="product-card">
+              <img src="Assests/images/pr-4.jpeg" />
+              <p>Chocolate Cakes (10% OFF)</p>
+            </div>
+          </div>
+
+          <div class="col-xl-2 col-lg-3 col-md-4 col-6">
+            <div class="product-card">
+              <img src="Assests/images/pr-5.jpeg" />
+              <p>Fruit Delight Flavours (10% OFF)</p>
+            </div>
+          </div>
+
+          <div class="col-xl-2 col-lg-3 col-md-4 col-6">
+            <div class="product-card">
+              <img src="Assests/images/pr-6.jpeg" />
+              <p>Bento & Tier Cakes (10% OFF)</p>
+            </div>
+          </div>
+
+          <div class="col-xl-2 col-lg-3 col-md-4 col-6">
+            <div class="product-card">
+              <img src="Assests/images/pr-7.jpeg" />
+              <p>Timeless Cake Flavours</p>
+            </div>
+          </div>
+
+          <div class="col-xl-2 col-lg-3 col-md-4 col-6">
+            <div class="product-card">
+              <img src="Assests/images/pr-8.jpeg" />
+              <p>Sandwiches</p>
+            </div>
+          </div>
+
+          <div class="col-xl-2 col-lg-3 col-md-4 col-6">
+            <div class="product-card">
+              <img src="Assests/images/pr-9.jpeg" />
+              <p>Special Plumcakes</p>
+            </div>
+          </div>
+
+          <div class="col-xl-2 col-lg-3 col-md-4 col-6">
+            <div class="product-card">
+              <img src="Assests/images/pr-10.jpeg" />
+              <p>Desserts @ 99</p>
+            </div>
+          </div>
+
+          <div class="col-xl-2 col-lg-3 col-md-4 col-6">
+            <div class="product-card">
+              <img src="Assests/images/pr-11.jpg" />
+              <p>Pizza, Burgers & Fries</p>
+            </div>
+          </div>
+
+          <div class="col-xl-2 col-lg-3 col-md-4 col-6">
+            <div class="product-card">
+              <img src="Assests/images/pr-12.jpeg" />
+              <p>Pastries</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3">
+            <h5>Useful Links</h5>
+            <ul class="footer-links">
+              <li><a href="#">Blogs</a></li>
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms & Conditions</a></li>
+              <li><a href="#">Shipping Policy</a></li>
+              <li><a href="#">Promo Codes</a></li>
+              <li><a href="#">Refund Policy</a></li>
+            </ul>
+          </div>
+
+          <div class="col-md-3">
+            <h5>Payment Methods</h5>
+
+            <div class="payment-box">
+              <img src="Assests/images/cash-svg.jpeg" />
+              <img src="Assests/images/mastercard-svg.jpeg" />
+              <img src="Assests/images/gpay-svg.jpeg" />
+              <img src="Assests/images/paytm-svg.jpeg" />
+              <img src="Assests/images/visa-svg.jpeg" />
+              <img src="Assests/images/upi-icon.jpeg" />
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <h5>Address</h5>
+
+            <p class="footer-text">
+              CKR Retail Private Limited - Food Division,<br />
+              No:12, Carvinville, Cenotaph Road,<br />
+              Teynampet, Chennai - 600018
+            </p>
+          </div>
+
+          <div class="col-md-3">
+            <h5>Contact & Connect</h5>
+
+            <p class="footer-contact">
+              <i class="bi bi-envelope"></i> support@cksfoods.in
+            </p>
+
+            <p class="footer-contact">
+              <i class="bi bi-telephone"></i> 7338999937
+            </p>
+
+            <div class="social-icons">
+              <a href="#"><i class="bi bi-facebook"></i></a>
+              <a href="#"><i class="bi bi-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+  </body>
+</html>
